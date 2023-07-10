@@ -1,8 +1,8 @@
 import os
-
 import dateparser
 from db.moduls import training_blocks
 from reade_file.moduls import reade_file_csv
+
 
 def modul_create(moduls):
     """
@@ -15,11 +15,11 @@ def modul_create(moduls):
     return modul
 
 
-def date_in_date(sinopsis: str) -> str:
+def date_in_date(synopsis: str) -> str:
     """
     Convert the date from the line July 13, 2023 18:00 (MSC) to the line 13.07 18.00
     """
-    date_string = sinopsis[0].split(',')[0].split('(')
+    date_string = synopsis[0].split(',')[0].split('(')
     date_string = date_string[0]
     date_object = dateparser.parse(date_string)
     formatted_date = date_object.strftime("%d.%m %H.%M")
@@ -51,11 +51,12 @@ def create_synopses_dict(synopses: list) -> dict:
 
     return synopses_dict
 
-def write_synopses_file(synopses_dict: dict):
+
+def write_synopses_file(synopses_dict: dict, file):
     """
     Create a file "synopses.txt" from the dictionary.
     """
-    with open('../result_file/synopses.txt', 'w', encoding='utf-8') as f:
+    with open(file, 'w', encoding='utf-8') as f:
         for k, v in synopses_dict.items():
             f.write('\n\n')
             f.write(k)
@@ -69,26 +70,13 @@ def write_synopses_file(synopses_dict: dict):
                 for volue in synopsis:
                     f.write(volue)
                 f.write('\n')
-    return f"Создан файл {os.path.basename('../result_file/synopses.txt')}. " \
-           f"В папке по адресу: {os.path.abspath('../result_file/synopses.txt')}"
+    return f"Создан файл {os.path.basename(file)}. " \
+           f"В папке по адресу: {os.path.abspath(file)}"
 
 
 if __name__ == '__main__':
-    file = '../work_file/anonse.csv'
+    dirs = os.path.dirname("../work_file/")
+    file = f"{dirs}/{os.listdir(path=dirs)[0]}"
     synopses = reade_file_csv(file)[1:]
     synopses_dict = create_synopses_dict(synopses)
-    print(write_synopses_file(synopses_dict))
-
-    # for k, v in synopses_dict.items():
-    #     print(k)
-    #     print(':bar_chart:Всем привет. Расписание на следующую неделю:chart_with_upwards_trend:')
-    #     print('')
-    #
-    #     for modul, synopsis in v.items():
-    #         print(modul)
-    #         for volue in synopsis:
-    #             print(volue)
-    #         print('\n')
-    #     print('++++++++++++++++++')
-
-
+    write_synopses_file(synopses_dict, file)

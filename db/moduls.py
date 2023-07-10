@@ -18,3 +18,62 @@ training_blocks = [
     ['SYS', 'SRLB', 'SDB', 'SLINA', 'SLINB', 'SLINC', 'NET', 'BASH', 'SVIRT', 'CICD', 'SMON', 'SFLT', 'SYSDB', 'SDBSQL',
      'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'BD-DEV']
 ]
+
+
+# def create_experts(list_experts, file):
+#     """
+#     Initial loading from a pre-compiled list
+#     """
+#     with open(file, 'w', encoding='UTF-8') as nc:
+#         for i in list_experts:
+#             nc.write(f"{i}\n")
+# #
+# create_experts(soft_experts, 'soft_experts.txt')
+
+def reade_experts(file):
+    with open(file, 'r', encoding='UTF-8') as nc:
+        experts_file = nc.read()
+        expert = set(experts_file.split('\n'))
+        return expert
+
+
+def update_experts(file):
+    experts = reade_experts(file)
+    expert = ''
+    while expert != 'q':
+        expert = input('Ведите Имя и Фамилию эксперта: ')
+        if expert == "q":
+            continue
+        else:
+            experts.add(expert)
+    write_experts(file, experts)
+    return experts
+
+
+def del_experts(experts, expert):
+    experts.discard(expert)
+    return experts
+
+
+def write_experts(file, experts):
+    with open(file, 'w', encoding='UTF-8') as nc:
+        for i in experts:
+            nc.write(f"{i}\n")
+
+
+# soft_experts = reade_experts('soft_experts.db')
+# print(soft_experts)
+#
+# print('Дияз Сейфетдинов' in soft_experts)
+# soft_experts.add('Дияз Сейфетдинов')
+# print('Дияз Сейфетдинов' in soft_experts)
+# print(update_experts('soft_experts.txt', soft_experts))
+
+if __name__ == "__mane__":
+    do_not_check = reade_experts('do_not_check.db')
+    soft_experts = reade_experts('soft_experts.db')
+    print(update_experts(soft_experts))
+    # do_not_check = update_experts(do_not_check, 'Aktrcfylh Zqkj[fyjd')
+    # write_experts('do_not_check.txt', do_not_check)
+    # do_not_check = del_experts(do_not_check, 'Aktrcfylh Zqkj[fyjd')
+    # write_experts('do_not_check.txt', do_not_check)

@@ -1,9 +1,7 @@
 import csv
-import dateparser
 import os
 import datetime
 import openpyxl
-
 
 def reade_file_xlsx(file, num=0):
     """
@@ -15,7 +13,7 @@ def reade_file_xlsx(file, num=0):
 
 
 def create_file_xls(sheet_list: list):
-    todys = datetime.today().date()
+    todys = datetime.datetime.today().date()
     wb = openpyxl.Workbook()
     sheet = wb.active
 
@@ -35,6 +33,16 @@ def reade_file_csv(file: csv):
         anonse_list = list(reader)
         return anonse_list
 
+def delete_startup_file():
+    """
+    Delete the original data file from the work_file folder.
+    """
+    folder_path = os.path.dirname("work_file/")
+    file_list = os.listdir(folder_path)
+    for file_name in file_list:
+        file_path = os.path.join(folder_path, file_name)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
 
 
 if __name__ == '__main__':
