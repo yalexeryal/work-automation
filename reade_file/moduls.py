@@ -4,6 +4,7 @@ import datetime
 import openpyxl
 import pandas as pd
 
+
 def reade_file_xlsx(file, num=0):
     """
     Reads xlsx file
@@ -14,29 +15,17 @@ def reade_file_xlsx(file, num=0):
 
 
 def create_file_xls(file):
-    todys = datetime.datetime.today().date()
+    today = datetime.datetime.today().date()
     df = pd.read_excel(file)
     df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',
-                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Дедлайн', 'Отправлена', 'Проверющий',
+                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Отправлена', 'Проверющий',
                  'Возможные проверяющие', 'Дней на проверке']]
 
-    df_rez.to_excel(f"result_file/Непроверенные работы {todys}.xlsx", index=False)
-    return f"Создан файл {os.path.basename('Непроверенные работы {todys}.xlsx')}. " \
-           f"В папке по адресу: {os.path.abspath('Непроверенные работы {todys}.xlsx')}"
+    df_rez_sorted = df_rez.sort_values('Отправлена')
 
-# def create_file_xls(sheet_list: list):
-#     todys = datetime.datetime.today().date()
-#     wb = openpyxl.Workbook()
-#     sheet = wb.active
-#
-#     sheet.append(('БЮ', 'Код продукта', 'Код набора', 'Название задания', 'id задания', 'Ссылка на работу',
-#                   'Ссылка на работу в новом ЛК', 'Студент', 'Дедлайн', 'Дедлайн пользователя', 'Дата отправки',
-#                   'Проверяющий', 'Возможные проверяющие', 'Дней на проверке'))
-#     for product in sheet.iter_rows(min_row=2, values_only=True):
-#         product = [product[0], product[1].upper(), product[2], product[5], product[4], product[12], product[13],
-#                    product[8], product[7], product[7], product[9], product[10], product[11], int(product[14])]
-#         sheet.append(product)
-#     wb.save(f"result_file/Непроверенные работы {todys}.xlsx")
+    result_file = f"result_file/Непроверенные работы {today}.xlsx"
+    df_rez_sorted.to_excel(result_file, index=False)
+    return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
 
 
 def reade_file_csv(file: csv):
@@ -44,6 +33,7 @@ def reade_file_csv(file: csv):
         reader = csv.reader(f, delimiter="\t")
         anonse_list = list(reader)
         return anonse_list
+
 
 def delete_startup_file():
     """
