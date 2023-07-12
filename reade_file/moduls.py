@@ -2,6 +2,7 @@ import csv
 import os
 import datetime
 import openpyxl
+import pandas as pd
 
 def reade_file_xlsx(file, num=0):
     """
@@ -12,19 +13,30 @@ def reade_file_xlsx(file, num=0):
     return sheet
 
 
-def create_file_xls(sheet_list: list):
+def create_file_xls(file):
     todys = datetime.datetime.today().date()
-    wb = openpyxl.Workbook()
-    sheet = wb.active
+    df = pd.read_excel(file)
+    df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',
+                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Дедлайн', 'Отправлена', 'Проверющий',
+                 'Возможные проверяющие', 'Дней на проверке']]
 
-    sheet.append(('БЮ', 'Код продукта', 'Код набора', 'Название задания', 'id задания', 'Ссылка на работу',
-                  'Ссылка на работу в новом ЛК', 'Студент', 'Дедлайн', 'Дедлайн пользователя', 'Дата отправки',
-                  'Проверяющий', 'Возможные проверяющие', 'Дней на проверке'))
-    for product in sheet.iter_rows(min_row=2, values_only=True):
-        product = [product[0], product[1].upper(), product[2], product[5], product[4], product[12], product[13],
-                   product[8], product[7], product[7], product[9], product[10], product[11], int(product[14])]
-        sheet.append(product)
-    wb.save(f"result_file/Непроверенные работы {todys}.xlsx")
+    df_rez.to_excel(f"result_file/Непроверенные работы {todys}.xlsx", index=False)
+    return f"Создан файл {os.path.basename('Непроверенные работы {todys}.xlsx')}. " \
+           f"В папке по адресу: {os.path.abspath('Непроверенные работы {todys}.xlsx')}"
+
+# def create_file_xls(sheet_list: list):
+#     todys = datetime.datetime.today().date()
+#     wb = openpyxl.Workbook()
+#     sheet = wb.active
+#
+#     sheet.append(('БЮ', 'Код продукта', 'Код набора', 'Название задания', 'id задания', 'Ссылка на работу',
+#                   'Ссылка на работу в новом ЛК', 'Студент', 'Дедлайн', 'Дедлайн пользователя', 'Дата отправки',
+#                   'Проверяющий', 'Возможные проверяющие', 'Дней на проверке'))
+#     for product in sheet.iter_rows(min_row=2, values_only=True):
+#         product = [product[0], product[1].upper(), product[2], product[5], product[4], product[12], product[13],
+#                    product[8], product[7], product[7], product[9], product[10], product[11], int(product[14])]
+#         sheet.append(product)
+#     wb.save(f"result_file/Непроверенные работы {todys}.xlsx")
 
 
 def reade_file_csv(file: csv):

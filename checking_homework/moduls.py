@@ -163,6 +163,11 @@ def modul_create(moduls):
     return modul
 
 
+def sorted_dict(unsorted_dictionary: dict):
+    sorted_tuple = sorted(unsorted_dictionary.items(), key=lambda x: x[0])
+    return dict(sorted_tuple)
+
+
 def create_dict(sheet, do_not_check):
     """
     Creating Dictionaries
@@ -210,4 +215,4 @@ def create_dict(sheet, do_not_check):
                     profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
                     profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
-    return experts_dict, profession_dict
+    return sorted_dict(experts_dict), sorted_dict(profession_dict)

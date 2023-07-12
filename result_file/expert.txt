@@ -1,104 +1,102 @@
 
 
- Анастасия Вакульская  
-Привет!
-
-На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
-
-javaqa-66    3. Примитивные типы данных, условные операторы, выход за границы типов и погрешность вычислений    https://netology.ru/trainer/task/2090220/    Николай Кастранец
-
-
- Эрика Завацкая  
+ Александр Маклаков  
 Привет!
 
 Сегодня до конца дня необходимо проверить ДЗ:
 
-javaqa-61    11. Объекты с внутренним состоянием, управление состоянием при тестировании    https://netology.ru/trainer/task/1955550/    Елизавета Скоморохова
+cppm-10    Структуры и перечисления    https://netology.ru/trainer/task/2096130/    Евгений Супряга
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+cppm-9    Исключения и обработка ошибок    https://netology.ru/trainer/task/2059778/    Владислав Мошков
 
 
- Татьяна Симоненко  
+ Алексей Лутков  
 Привет!
 
 Сегодня до конца дня необходимо проверить ДЗ:
 
-ajs-56    Платформы: браузер vs Node.js    https://netology.ru/trainer/task/2067160/    Александр Ковалёв
-
-На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
-
-ra-53    Формы    https://netology.ru/trainer/task/2094062/    Алексей Николаев
-ra-55    Формы    https://netology.ru/trainer/task/2093147/    Маргарита Иконникова
-ra-52    React Router    https://netology.ru/trainer/task/2094578/    Аркадий Кожухов
-
-
- Дамир Рысаев  
-Привет!
-
-Сегодня до конца дня необходимо проверить ДЗ:
-
-ra-51    События и состояния    https://netology.ru/trainer/task/2035762/    Ален Евтихов
-
-
- None  
-Привет!
-Есть просроченные ДЗ необходимо проверить в ближайшее время:
-
-iqa-70    Жизненный цикл разработки ПО. Гибкие методологии разработки ПО    https://netology.ru/trainer/task/2087458/    Елена Шестакова    2023-07-04
-iqa-70    Жизненный цикл разработки ПО. Гибкие методологии разработки ПО    https://netology.ru/trainer/task/2092678/    Алексей Хотько    2023-07-04
-
-На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
-
-iqa-70    Жизненный цикл разработки ПО. Гибкие методологии разработки ПО    https://netology.ru/trainer/task/2097770/    Ирина Жакупова
-iqa-70    Жизненный цикл разработки ПО. Гибкие методологии разработки ПО    https://netology.ru/trainer/task/2098430/    Олеся 
-iqa-70    Жизненный цикл разработки ПО. Гибкие методологии разработки ПО    https://netology.ru/trainer/task/2098709/    Анна Быстрова
-
-
- Владислав Хорев  
-Привет!
-Есть просроченные ДЗ необходимо проверить в ближайшее время:
-
-sqlcpp-7    Работа с PostgreSQL из С++    https://netology.ru/trainer/task/2073094/    Евгений Землянко    2023-07-04
-
-Сегодня до конца дня необходимо проверить ДЗ:
-
-cppm-10    ООП: наследование и полиморфизм    https://netology.ru/trainer/task/2085578/    Игнатий Глушков
-cppm-9    Сборка и подключение библиотек    https://netology.ru/trainer/task/2077057/    Сергей Марченко
-cppl-8    Новшества С++     https://netology.ru/trainer/task/2087071/    Роман Погожев
-
-На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
-
-cppm-9    ООП: наследование и полиморфизм    https://netology.ru/trainer/task/2046208/    Андрей Игнатьев
+rnfd-29    Объединения и запросы    https://netology.ru/trainer/task/2096397/    Алла Руссакова
 
 
  Антон Лукашов   
 Привет!
+Есть просроченные ДЗ необходимо проверить в ближайшее время:
+
+ibos-27    Язык Python в информационной безопасности    https://netology.ru/trainer/task/2055196/    Александр Кузнецов    2023-07-06
+ibnet-28    Виртуальные частные сети VPN    https://netology.ru/trainer/task/2073578/    Сергей Танеев    2023-07-06
 
 Сегодня до конца дня необходимо проверить ДЗ:
 
-ibweb-25    DevSecOps и AppSec. Часть 2    https://netology.ru/trainer/task/2058132/    Константин Новосельцев
-ibweb-22    DevSecOps и AppSec. Часть 2    https://netology.ru/trainer/task/2089954/    Альберт Кюллинен
-ibos-29    ОС Linux. Часть 2    https://netology.ru/trainer/task/2073207/    Andrey Mikheev
-ibos-26    Язык Python. Криптография    https://netology.ru/trainer/task/2078713/    Александра Ильина
+ibos-29    Использование командных оболочек. Часть 2    https://netology.ru/trainer/task/2091923/    Евгений Барышев
+ibos-29    Язык Python в информационной безопасности    https://netology.ru/trainer/task/2097145/    Andrey Mikheev
+ibos-28    Язык Python в информационной безопасности    https://netology.ru/trainer/task/2071158/    Кирилл Моисеев
+ibos-30    ОС Windows. Часть 2    https://netology.ru/trainer/task/2099911/    Денис Воротников
+ibos-30    ОС Linux. Часть 1    https://netology.ru/trainer/task/2102398/    Сергей Мосевич
+ibos-30    ОС Windows. Часть 1    https://netology.ru/trainer/task/2098244/    Денис Воротников
+ibnet-31    Виртуальные частные сети VPN    https://netology.ru/trainer/task/2069467/    Alex Isaev
+ibnet-31    Виртуальные частные сети VPN    https://netology.ru/trainer/task/2092507/    Михаил 
+ibnet-31    Работа сети Интернет HTTP, HTTPS, HTTP2    https://netology.ru/trainer/task/2078345/    Александр Найман
+ibnet-32    Протоколы транспортного уровня: TCP, UDP    https://netology.ru/trainer/task/2095552/    Роман Грушевский
+ibnet-32    Сетевые технологии, ключевые устройства    https://netology.ru/trainer/task/2092920/    Илья Вакулин
+ibnet-29    Протоколы транспортного уровня: TCP, UDP    https://netology.ru/trainer/task/1898899/    Данил 
+ibb-32    Теоретические основы криптографии, симметричные криптосистемы    https://netology.ru/trainer/task/2089229/    Александр Романов
+ibweb-24    Архитектура современных веб-сервисов    https://netology.ru/trainer/task/2069601/    Антон Ценин
+ibweb-26    Архитектура современных веб-сервисов    https://netology.ru/trainer/task/2098559/    Илья 
+ibdev-27    Популярные языки, системы сборки, управления зависимостями    https://netology.ru/trainer/task/2086765/    Николай Магер
 
 На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
 
-ibnet-28    Виртуальные частные сети VPN    https://netology.ru/trainer/task/2073578/    Сергей Танеев
-ibnet-30    Работа сети Интернет BGP, DNS    https://netology.ru/trainer/task/2033927/    Михаил Алиев
-ibdef-18    Мониторинг событий безопасности (Suricata)    https://netology.ru/trainer/task/1937537/    Валерий Браун
-ibos-27    Язык Python в информационной безопасности    https://netology.ru/trainer/task/2055196/    Александр Кузнецов
-ibdev-26    Популярные языки, системы сборки, управления зависимостями    https://netology.ru/trainer/task/2061429/    Руслан Чуприков
+ibos-29    Язык Python. Криптография    https://netology.ru/trainer/task/2095467/    Богдан Шумский
+ibnet-32     Протоколы сетевого уровня: IPv4, IPv6    https://netology.ru/trainer/task/2095530/    Данил Шеин
+ibnet-32    Сетевые технологии, ключевые устройства    https://netology.ru/trainer/task/2089133/    хана-кейла баренбаум
+ibweb-26    Архитектура современных веб-сервисов    https://netology.ru/trainer/task/2100351/    Михаил Волчек
+ibweb-25    DevSecOps и AppSec. Часть 2    https://netology.ru/trainer/task/2078822/    Владимир Дутышев
+ibdef-23    Мониторинг событий безопасности (Suricata)    https://netology.ru/trainer/task/2047882/    Ирина Бурьба
+ibdef-24    Мониторинг событий безопасности (Suricata)    https://netology.ru/trainer/task/2104071/    Юрий Тренин
 
 
- Иван Бочаров  
+ Антон Парамонов  
+Привет!
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+pwin-18    Настройка виртуальных машин    https://netology.ru/trainer/task/2068082/    Евгений Забабон
+pwin-19    Настройка виртуальных машин    https://netology.ru/trainer/task/2103979/    Артем Булатов
+scada-15    HMI. Человеко-машинный интерфейс    https://netology.ru/trainer/task/2095223/    Александр Сиваков
+
+
+ Валерий Линьков  
 Привет!
 
 Сегодня до конца дня необходимо проверить ДЗ:
 
-javacore-44    Сборка проектов. Maven и Gradle    https://netology.ru/trainer/task/2083609/    Дамир Салихов 
+wfnt-15    Безопасность в беспроводных сетях    https://netology.ru/trainer/task/2084833/    Павел Мезенцев
+
+
+ Василий Петров  
+Привет!
 
 На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
 
-javacore-42    Mockito. Мокирование вызовов, Mock, Stub    https://netology.ru/trainer/task/2086455/    Роман Новиков
-jclo-32    Обзорная лекция: TestContainers, Kubernetes, облака    https://netology.ru/trainer/task/2075491/    Тимур Житваев
+jsaqa-47    Jest. Playwright    https://netology.ru/trainer/task/1988168/    Иван Чижевский
+fpyjs-66    Прототипы, ООП и функции высшего порядка    https://netology.ru/trainer/task/2097587/    Дмитрий Широков
+
+
+ Виктор Лоскутов  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+jspr-36    Servlets Containers    https://netology.ru/trainer/task/2077457/    Гаррик Тен
+
+
+ Виктория Прохорова  
+Привет!
+Есть просроченные ДЗ необходимо проверить в ближайшее время:
+
+lrv-43    Middleware. Авторизация    https://netology.ru/trainer/task/2090453/    Сергей Григорьев    2023-07-05
 
 
  Владислав Уткин  
@@ -108,48 +106,150 @@ jclo-32    Обзорная лекция: TestContainers, Kubernetes, облак
 fpyahj-54    Обработка событий    https://netology.ru/trainer/task/2081969/    Денис Королев    2023-07-03
 
 
+ Владислав Хорев  
+Привет!
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+cpps-13    Операторы ветвления. Логические операции    https://netology.ru/trainer/task/2098881/    Максим Дюков
+
+
+ Вячеслав Герасименко  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+ibdev-23    Cистемы хранения данных (СУБД)    https://netology.ru/trainer/task/2089786/    Сергей Бикетов
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+ibweb-25    Механизмы идентификации, аутентификации и авторизации и безопасного хранения данных о пользователях.     https://netology.ru/trainer/task/2095777/    Константин Новосельцев
+
+
+ Игорь Грамматчиков  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+ajs-55    Модули и WebPack    https://netology.ru/trainer/task/2075889/    Федор Едемский
+ajs-55    Object, Reflection и Proxy    https://netology.ru/trainer/task/2101458/    Станислав Угаров
+ajs-57    Модули и WebPack    https://netology.ru/trainer/task/2084969/    Никита Камелин
+ajs-57    Модули и WebPack    https://netology.ru/trainer/task/2095347/    Владислав Байбородов
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+ajs-55    Регулярные выражения    https://netology.ru/trainer/task/2101057/    Диана Веревкина
+ajs-55    Модули и WebPack    https://netology.ru/trainer/task/2029490/    Диана Веревкина
+ajs-55    Платформы: браузер vs Node.js    https://netology.ru/trainer/task/2066415/    Татьяна Рыбченко
+ajs-57    Модули и WebPack    https://netology.ru/trainer/task/2098348/    Никита Матросов
+ajs-52    Платформы: браузер vs Node.js    https://netology.ru/trainer/task/2076121/    Данила Калиничев
+
+
+ Игорь Сверчков  
+Привет!
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+sqlpy-78    Продвинутая выборка данных    https://netology.ru/trainer/task/2085958/    Леонтий Крохалев
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2081278/    Виктор Ильющенков
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2086178/    Роман Смольяков
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2089603/    Николай Накаряков
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2093419/    Виталий Михайлов
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2095497/    Семен Клюев
+sqlpy-80    Продвинутая выборка данных    https://netology.ru/trainer/task/2101262/    Анатолий Савин
+
+
+ Ильмир Сахипов  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+rutsw-20    Подсети и маски IPv4    https://netology.ru/trainer/task/2092873/    Евгений Никифоров
+ipnt-11    Основы работы с телефонией Cisco.     https://netology.ru/trainer/task/2091195/    Михаил Лях
+
+
+ Инесса Кочеткова  
+Привет!
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+cpps-13    Переменные и их типы    https://netology.ru/trainer/task/2090310/    Макар 
+
+
+ Кирилл Табельский  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+adpy-74    Декораторы    https://netology.ru/trainer/task/2099456/    Роман Колесников
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2101433/    Антон Литвиненко
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2102430/    Юрий Холодов
+adpy-76    Декораторы    https://netology.ru/trainer/task/2103647/    Антон Демидов
+adpy-72    Декораторы    https://netology.ru/trainer/task/2031557/    Роман 
+webpy-60    Aiohttp    https://netology.ru/trainer/task/2101514/    Леонид Савченко
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+adpy-74    Итераторы, генераторы    https://netology.ru/trainer/task/2100085/    Дарья Ткаченко
+adpy-78    Декораторы    https://netology.ru/trainer/task/2104010/    Никита Безматерных
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2104008/    Анастасия Тугунова
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2104916/    Артём Лубенцов
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2105620/    Роман Поляков
+adpy-78    Итераторы, генераторы    https://netology.ru/trainer/task/2106303/    Павел Шостак
+adpy-76    Декораторы    https://netology.ru/trainer/task/2102155/    Максим Мягков
+adpy-76    Итераторы, генераторы    https://netology.ru/trainer/task/2103045/    Евгения Бирюлина
+adpy-72    Декораторы    https://netology.ru/trainer/task/2106508/    Алексей Иванов
+webpy-66    Aiohttp    https://netology.ru/trainer/task/2097595/    Юрий Пустовойт
+webpy-62    Celery    https://netology.ru/trainer/task/2095417/    Алексей Кудинов
+
+
+ Николай Свинцов  
+Привет!
+
+Сегодня до конца дня необходимо проверить ДЗ:
+
+sqlar-3    Управление доступом    https://netology.ru/trainer/task/2101859/    Александр Борисов
+sqlar-3    Управление доступом    https://netology.ru/trainer/task/2102323/    Елизавета Бенко
+sqlar-3    Мониторинг состояния БД    https://netology.ru/trainer/task/2096456/    Александр Борисов
+sqlar-1    Управление доступом    https://netology.ru/trainer/task/2081495/    Юрий Спиривак
+
+
+ Рифат Галлямов  
+Привет!
+
+На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+
+jspr-36    Servlets Containers    https://netology.ru/trainer/task/2103005/    Артур Беляев
+
+
  Роман Лешин  
 Привет!
 
-На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
+Сегодня до конца дня необходимо проверить ДЗ:
 
-andin-40    Retrofit (CRUD)    https://netology.ru/trainer/task/2080081/    Владимир Дудин
+andin-40    Многопоточность в Android    https://netology.ru/trainer/task/2073413/    Дмитрий
 
 
- Павел Малыгин  
+ Семен Поляков  
 Привет!
 
 Сегодня до конца дня необходимо проверить ДЗ:
 
-mroc-22    Возможности мобильной платформы 1С. Настройка ПО    https://netology.ru/trainer/task/2054908/    Александр Краснов
+ra-54    События и состояния    https://netology.ru/trainer/task/2078333/    Анна Мухамедчина
 
 
- Дмитрий Томин  
-Привет!
-
-Сегодня до конца дня необходимо проверить ДЗ:
-
-crpnt-13    Виртуализация сетевых функций    https://netology.ru/trainer/task/2080885/    Эльдар Тактаров
-
-
- Сергей Родионов  
+ Тимур Анвартдинов  
 Привет!
 
 На всякий случай - до завтра до конца дня необходимо проверить ДЗ:
 
-ocps-20    Разборный вебинар по блоку Решение задач бухгалтерского учета    https://netology.ru/trainer/task/2093324/    Александр Панфилов
+jsqa-55    Основные понятия    https://netology.ru/trainer/task/2093345/    Андрей Кучеренко
 
 
- Виктория Прохорова  
-Привет!
-
-Сегодня до конца дня необходимо проверить ДЗ:
-
-lrv-43    Middleware. Авторизация    https://netology.ru/trainer/task/2090453/    Сергей Григорьев
-
-
- Алексей Воздвиженский  
+ Филипп Воронов  
 Привет!
 Есть просроченные ДЗ необходимо проверить в ближайшее время:
 
-slinb-27    Файловые системы    https://netology.ru/trainer/task/2072226/    Анатолий     2023-07-03
+javaqa-54    12. Композиция и зависимость объектов. Mockito при создании авто-тестов    https://netology.ru/trainer/task/2097213/    Татьяна Корышева    2023-07-06
+javaqa-54    7. Строки и массивы    https://netology.ru/trainer/task/2084990/    Артём Гаплевский    2023-07-06
+javaqa-54    16. Collections Framework. CRUD и тестирование систем, управляющих набором объектов    https://netology.ru/trainer/task/2098946/    Виктория Шевченко    2023-07-06
