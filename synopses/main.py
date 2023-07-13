@@ -1,7 +1,13 @@
 import os
+
 import dateparser
 from db.moduls import training_blocks
 from reade_file.moduls import reade_file_csv
+
+
+def sorted_dict(unsorted_dictionary: dict):
+    sorted_tuple = sorted(unsorted_dictionary.items(), key=lambda x: x[0])
+    return dict(sorted_tuple)
 
 
 def modul_create(moduls):
@@ -36,20 +42,20 @@ def create_synopses_dict(synopses: list) -> dict:
                 synopsis[0].split(',')[8] == 'Утверждён':
             synopsis_date = date_in_date(synopsis)
             moduls = synopsis[0].split(',')[1]
-            code_produckt = moduls.split('-')[:-1][0].upper()
-            code_produckt = modul_create(code_produckt)
+            code_produckt = moduls.rsplit('-', maxsplit=1)[0].upper()
+            code_produckt = modul_create(code_produckt).upper()
             task = synopsis[0].split(',')[3]
             expert = synopsis[0].split(',')[4]
-            synopsis_str_shot = f"{synopsis_date}  {task}  @{expert}"
+            synopsis_str_shot = f"{synopsis_date}  {task}  @{expert} \n"
             if code_produckt not in synopses_dict:
                 synopses_dict[code_produckt] = {moduls: [synopsis_str_shot]}
             else:
                 if moduls not in synopses_dict[code_produckt]:
-                    synopses_dict[code_produckt].update({moduls: [synopsis_str_shot]})
+                    synopses_dict[code_produckt].update({moduls.upper(): [synopsis_str_shot]})
                 else:
                     synopses_dict[code_produckt][moduls] = synopses_dict[code_produckt][moduls] + [synopsis_str_shot]
 
-    return synopses_dict
+    return sorted_dict(synopses_dict)
 
 
 def write_synopses_file(synopses_dict: dict, file):
@@ -70,6 +76,7 @@ def write_synopses_file(synopses_dict: dict, file):
                 for volue in synopsis:
                     f.write(volue)
                 f.write('\n')
+            f.write('--------')
     return f"Создан файл {os.path.basename(file)}. " \
            f"В папке по адресу: {os.path.abspath(file)}"
 
