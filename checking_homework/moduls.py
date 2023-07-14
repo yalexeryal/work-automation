@@ -1,11 +1,11 @@
 import os
 import datetime
-from db.moduls import training_blocks, reade_experts
+from db.moduls import training_blocks, reade_db_file
 
 from pprint import pprint
 
 file_soft_expert = 'db/soft_experts.db'
-soft_expert = reade_experts(file_soft_expert)
+soft_expert = reade_db_file(file_soft_expert)
 
 
 def get_weekday_days_inspections():
@@ -54,7 +54,7 @@ def message_template(day_name):
                            ]
         new_list_profession = ['Коллеги, всем добрый день!',
                                ['Есть просроченные ДЗ, необходимо проверить в ближайшее время:\n'],
-                               ['\nегодня до конца дня необходимо проверить ДЗ:\n'],
+                               ['\nСегодня до конца дня необходимо проверить ДЗ:\n'],
                                [
                                    '\nНа всякий случай напоминаю, что до понедельника до конца дня необходимо проверить ДЗ:\n'],
                                set()

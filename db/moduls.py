@@ -30,15 +30,15 @@ training_blocks = [
 # #
 # create_experts(soft_experts, 'soft_experts.txt')
 
-def reade_experts(file):
+def reade_db_file(file):
     with open(file, 'r', encoding='UTF-8') as nc:
-        experts_file = nc.read()
-        expert = set(experts_file.split('\n'))
-        return expert
+        db_file = nc.read()
+        result = set(db_file.split('\n'))
+        return result
 
 
 def update_experts(file):
-    experts = reade_experts(file)
+    experts = reade_db_file(file)
     expert = ''
     while expert != 'q':
         expert = input('Ведите Имя и Фамилию эксперта: ')
@@ -70,8 +70,8 @@ def write_experts(file, experts):
 # print(update_experts('soft_experts.txt', soft_experts))
 
 if __name__ == "__mane__":
-    do_not_check = reade_experts('do_not_check.db')
-    soft_experts = reade_experts('soft_experts.db')
+    do_not_check = reade_db_file('do_not_check.db')
+    soft_experts = reade_db_file('soft_experts.db')
     print(update_experts(soft_experts))
     # do_not_check = update_experts(do_not_check, 'Aktrcfylh Zqkj[fyjd')
     # write_experts('do_not_check.txt', do_not_check)
