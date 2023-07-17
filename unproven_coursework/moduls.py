@@ -1,23 +1,6 @@
 import os
 import datetime
-from db.moduls import training_blocks, reade_db_file
-
-from pprint import pprint
-
-file_soft_expert = 'db/soft_experts.db'
-# soft_expert = reade_db_file(file_soft_expert)
-
-
-def get_weekday_days_inspections():
-    """
-    Get the names of the day of the week and the dates of overdue homework, check today and tomorrow.
-    """
-
-    today = datetime.date.today()
-    overdue = today - datetime.timedelta(days=4)
-    tomorrow_start = today - datetime.timedelta(days=2)
-    tomorrow_finish = today - datetime.timedelta(days=2)
-    return overdue, tomorrow_start, tomorrow_finish
+from db.moduls import reade_db_file
 
 
 def checker_inspector(checker, inspectors) -> str:
@@ -45,7 +28,7 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
     if submitted <= overdue_date:
         return 1, f"{modul}    {session}    {session_link}    {student}    {submitted}"
 
-    elif submitted > overdue_date and submitted < tomorrow_start_date:
+    elif overdue_date < submitted < tomorrow_start_date:
         return 2, f"{modul}    {session}    {session_link}    {student}"
 
     elif tomorrow_start_date <= submitted:
@@ -84,12 +67,12 @@ def write_expert_file(experts_dict: dict, rez_file_expert, soft_expert):
            f"В папке по адресу: {os.path.abspath(rez_file_expert)}"
 
 
-def modul_create(moduls):
-    modul = moduls
-    for block in training_blocks:
-        if moduls in block:
-            modul = block[0]
-    return modul
+# def modul_create(moduls):
+#     modul = moduls
+#     for block in training_blocks:
+#         if moduls in block:
+#             modul = block[0]
+#     return modul
 
 
 def sorted_dict(unsorted_dictionary: dict):
@@ -115,7 +98,6 @@ def create_dict(sheet, files):
                        ['\nСегодня до конца дня необходимо проверить курсовые:\n'],
                        ['\nНа всякий случай - до завтра до конца дня необходимо проверить курсовые:\n'],
                        ]
-
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
         submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
@@ -148,7 +130,5 @@ def create_dict(sheet, files):
 
     return sorted_dict(experts_dict)
 
-
 # if __name__ == '__main__':
 #     create_dict()
-

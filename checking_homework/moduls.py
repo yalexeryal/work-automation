@@ -2,8 +2,6 @@ import os
 import datetime
 from db.moduls import training_blocks, reade_db_file
 
-from pprint import pprint
-
 file_soft_expert = 'db/soft_experts.db'
 soft_expert = reade_db_file(file_soft_expert)
 
@@ -56,7 +54,8 @@ def message_template(day_name):
                                ['Есть просроченные ДЗ, необходимо проверить в ближайшее время:\n'],
                                ['\nСегодня до конца дня необходимо проверить ДЗ:\n'],
                                [
-                                   '\nНа всякий случай напоминаю, что до понедельника до конца дня необходимо проверить ДЗ:\n'],
+                                   '\nНа всякий случай напоминаю, что до понедельника до конца дня необходимо '
+                                   'проверить ДЗ:\n'],
                                set()
                                ]
         return new_list_expert, new_list_profession
@@ -90,7 +89,7 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
     if submitted <= overdue_date:
         return 1, f"{modul}    {session}    {session_link}    {student}    {submitted}"
 
-    elif submitted > overdue_date and submitted < tomorrow_start_date:
+    elif overdue_date < submitted < tomorrow_start_date:
         return 2, f"{modul}    {session}    {session_link}    {student}"
 
     elif tomorrow_start_date <= submitted:
