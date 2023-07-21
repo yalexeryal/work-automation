@@ -1,5 +1,4 @@
 import os
-
 import dateparser
 from db.moduls import training_blocks
 from reade_file.moduls import reade_file_csv
@@ -38,8 +37,9 @@ def create_synopses_dict(synopses: list) -> dict:
     """
     synopses_dict = {}
     for synopsis in synopses:
+        flag_syn = "Утверждён" in synopsis[0].split(',')
         if synopsis[0].split(',')[2] == 'Программирование' and synopsis[0].split(',')[1] != "" and \
-                synopsis[0].split(',')[8] == 'Утверждён':
+                flag_syn:
             synopsis_date = date_in_date(synopsis)
             moduls = synopsis[0].split(',')[1]
             code_produckt = moduls.rsplit('-', maxsplit=1)[0].upper()

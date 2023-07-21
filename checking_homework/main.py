@@ -1,7 +1,7 @@
 import os
 from moduls import write_expert_file, create_dict, write_profession_file
 from reade_file.moduls import reade_file_xlsx
-from db.moduls import reade_experts
+from db.moduls import reade_db_file
 
 dirs = os.path.dirname("../work_file/")
 file = f"{dirs}/{os.listdir(path=dirs)[0]}"
