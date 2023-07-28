@@ -72,7 +72,7 @@ def apps_run():
         # print(write_profession_file(profession_dict, rez_file_profession))
         # print(create_file_xls(file))
     elif request_assignment == 3:
-        app_training_check()
+        app_training_check(file)
         # rez_file_training = 'result_file/training.xlsx'
         # sheet = reade_file_xlsx(file)
         # training_dict = create_dict_training(sheet)

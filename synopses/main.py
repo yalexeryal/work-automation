@@ -30,7 +30,6 @@ def date_in_date(synopsis: str) -> str:
     formatted_date = date_object.strftime("%d.%m %H.%M")
     return formatted_date
 
-
 def create_synopses_dict(synopses: list) -> dict:
     """
     Create a dictionary with announcements by module code from the list of announcements.
@@ -38,24 +37,55 @@ def create_synopses_dict(synopses: list) -> dict:
     synopses_dict = {}
     for synopsis in synopses:
         flag_syn = "Утверждён" in synopsis[0].split(',')
-        if synopsis[0].split(',')[2] == 'Программирование' and synopsis[0].split(',')[1] != "" and \
-                flag_syn:
+        if synopsis[0].split(',')[2] == 'Программирование' and synopsis[0].split(',')[1] != "" and flag_syn:
             synopsis_date = date_in_date(synopsis)
             moduls = synopsis[0].split(',')[1]
+            moduls = moduls.upper()
             code_produckt = moduls.rsplit('-', maxsplit=1)[0].upper()
             code_produckt = modul_create(code_produckt).upper()
             task = synopsis[0].split(',')[3]
             expert = synopsis[0].split(',')[4]
             synopsis_str_shot = f"{synopsis_date}  {task}  @{expert} \n"
             if code_produckt not in synopses_dict:
-                synopses_dict[code_produckt] = {moduls: [synopsis_str_shot]}
+                synopses_dict[code_produckt] = {moduls.upper(): [synopsis_str_shot]}
             else:
                 if moduls not in synopses_dict[code_produckt]:
                     synopses_dict[code_produckt].update({moduls.upper(): [synopsis_str_shot]})
                 else:
-                    synopses_dict[code_produckt][moduls] = synopses_dict[code_produckt][moduls] + [synopsis_str_shot]
+                    synopses_dict[code_produckt][moduls].extend(synopsis_str_shot)  # Добавляем данные в список
+        else:
+            print(len(synopsis[0].split(',')), flag_syn, synopsis[0].split(',')[2], synopsis[0].split(',')[0], synopsis[0].split(',')[1])
 
     return sorted_dict(synopses_dict)
+
+#
+# def create_synopses_dict(synopses: list) -> dict:
+#     """
+#     Create a dictionary with announcements by module code from the list of announcements.
+#     """
+#     synopses_dict = {}
+#     for synopsis in synopses:
+#         flag_syn = "Утверждён" in synopsis[0].split(',')
+#         if synopsis[0].split(',')[2] == 'Программирование' and synopsis[0].split(',')[1] != "" and \
+#                 flag_syn:
+#             synopsis_date = date_in_date(synopsis)
+#             moduls = synopsis[0].split(',')[1]
+#             code_produckt = moduls.rsplit('-', maxsplit=1)[0].upper()
+#             code_produckt = modul_create(code_produckt).upper()
+#             task = synopsis[0].split(',')[3]
+#             expert = synopsis[0].split(',')[4]
+#             synopsis_str_shot = f"{synopsis_date}  {task}  @{expert} \n"
+#             if code_produckt not in synopses_dict:
+#                 synopses_dict[code_produckt] = {moduls.upper(): [synopsis_str_shot]}
+#             else:
+#                 if moduls not in synopses_dict[code_produckt]:
+#                     synopses_dict[code_produckt].update({moduls.upper(): [synopsis_str_shot]})
+#                 else:
+#                     synopses_dict[code_produckt][moduls] = synopses_dict[code_produckt][moduls] + [synopsis_str_shot]
+#         else:
+#             print(len(synopsis[0].split(',')), flag_syn, synopsis[0].split(',')[2], synopsis[0].split(',')[0], synopsis[0].split(',')[1])
+#
+#     return sorted_dict(synopses_dict)
 
 
 def write_synopses_file(synopses_dict: dict, file):

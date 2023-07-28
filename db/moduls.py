@@ -9,12 +9,12 @@ training_blocks = [
     ['IOS', 'info-ios', 'BIOS', 'IBALGO', 'AIOS', 'IOSUI', 'IOSINT', 'IOSDT', 'IOSADV', 'FIOS'],
     ['NDJS', 'info-ndjs', 'NDSE', 'NDTNF', 'FNDJS'],
     ['NTW', 'info-ntw', 'BNTW', 'RUTSW', 'RSNT', 'DRUT', 'SECNT', 'WFNT', 'QOS', 'CRPNT', 'OPTNT', 'IPNT', 'FNTW'],
-    ['ONEC', 'SRK', 'BALGO', 'VY', 'INF', 'SID', 'REGIS', 'FILE', 'RNFD', 'IND', 'MA', 'PV', 'BPZ', 'DTK', 'BSP',
-     'OCEDT', 'TAT', 'MROC', 'OCPS', 'FONEC', 'FONECMID'],
+    ['ONEC', 'INFO-ONEC', 'INFO-ONECMID', 'SRK', 'BALGO', 'VY', 'INF', 'SID', 'REGIS', 'FILE', 'RNFD', 'IND', 'MA',
+     'PV', 'BPZ', 'DTK', 'BSP', 'OCEDT', 'TAT', 'MROC', 'OCPS', 'FONEC', 'FONECMID'],
     ['PAE', 'PBAS', 'PWIN', 'PNET', 'SCADA', 'PHD', 'CODEPLC', 'PIB', 'PMS', 'FPAE'],
     ['QAMID', 'FAQA', 'JSQA', 'JSAQA', 'MQA', 'LOADQA', 'IBQA'],
     ['SIB', 'INFOSIB', 'IBB', 'IBNET', 'IBGIT', 'IBOS', 'IBDEV', 'IBWEB', 'IBDEF', 'IBMOD', 'IBINC', 'FIB'],
-    ['SQLD', 'SQLSLIN', 'SQLBASH', 'DWH-SQLD', 'SQLSDB', 'SQLDB'],
+    ['SQLD', 'SQLQA', 'SQLSLIN', 'SQLBASH', 'DWH-SQLD', 'SQLSDB', 'SQLDB'],
     ['SYS', 'SRLB', 'SDB', 'SLINA', 'SLINB', 'SLINC', 'NET', 'BASH', 'SVIRT', 'CICD', 'SMON', 'SFLT', 'SYSDB', 'SDBSQL',
      'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS']
 ]

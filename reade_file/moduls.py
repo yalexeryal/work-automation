@@ -23,7 +23,7 @@ def create_file_xls(file):
 
     df_rez_sorted = df_rez.sort_values('Отправлена')
 
-    result_file = f"result_file/Непроверенные работы {today}.xlsx"
+    result_file = f"result_file/Непроверенные ДЗ {today}.xlsx"
     df_rez_sorted.to_excel(result_file, index=False)
     return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
 
