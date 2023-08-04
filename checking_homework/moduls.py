@@ -23,7 +23,6 @@ def get_weekday_days_inspections():
         overdue = today - datetime.timedelta(days=6)
         tomorrow_start = today - datetime.timedelta(days=2)
         tomorrow_finish = today - datetime.timedelta(days=2)
-        print(overdue, tomorrow_start, tomorrow_finish)
         return day_name, overdue, tomorrow_start, tomorrow_finish
 
     elif day_name == 'Thursday' or day_name == 'Friday':
@@ -214,4 +213,5 @@ def create_dict(sheet, do_not_check):
                     profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
                     profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
+    print(f"День недели: - {day_name}\n Просроченно: до - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
     return sorted_dict(experts_dict), sorted_dict(profession_dict)

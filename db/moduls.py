@@ -1,22 +1,22 @@
 training_blocks = [
     ['JAVA', 'JM'],
-    ['BTRX', 'BWEB', 'BPATTI', 'BPATTC', 'BCONT', 'BBAY', 'FBTRX'],
-    ['CPP', 'info-cpp', 'CPPS', 'CPPM', 'ALGOCPP', 'CPPL', 'SQLCPP', 'MAP', 'DPCPP', 'QT', 'IOT', 'PUE', 'FCPP'],
-    ['DEVOPS', 'info-devops', 'MNT', 'DEVKUB', 'CLOKUB', 'GIT-DEV', 'VIRTD', 'TER', 'KONF', 'CICD-Dev', 'MON-DEV',
+    ['BTRX', 'INFO-BTRX', 'BWEB', 'BPATTI', 'BPATTC', 'BCONT', 'BBAY', 'FBTRX'],
+    ['CPP', 'INFO-CPP', 'CPPS', 'CPPM', 'ALGOCPP', 'CPPL', 'SQLCPP', 'MAP', 'DPCPP', 'QT', 'IOT', 'PUE', 'FCPP'],
+    ['DEVOPS', 'INFO-DEVOPS', 'MNT', 'DEVKUB', 'CLOKUB', 'GIT-DEV', 'VIRTD', 'TER', 'KONF', 'CICD-DEV', 'MON-DEV',
      'MICROS', 'KUBER', 'CLOPRO', 'BD-DEV', 'FDEVOPS'],
     ['PY', 'PYAPI', 'SQLPY', 'PDPTL', 'PDPTS'],
     ['FPY', 'FPYMQ', 'FPYJS', 'FPYAJS', 'FPYAHJ', 'FFPY'],
     ['IOS', 'info-ios', 'BIOS', 'IBALGO', 'AIOS', 'IOSUI', 'IOSINT', 'IOSDT', 'IOSADV', 'FIOS'],
-    ['NDJS', 'info-ndjs', 'NDSE', 'NDTNF', 'FNDJS'],
-    ['NTW', 'info-ntw', 'BNTW', 'RUTSW', 'RSNT', 'DRUT', 'SECNT', 'WFNT', 'QOS', 'CRPNT', 'OPTNT', 'IPNT', 'FNTW'],
+    ['NDJS', 'INFO-NDJS', 'NDSE', 'NDTNF', 'FNDJS'],
+    ['NTW', 'INFO-NTW', 'BNTW', 'RUTSW', 'RSNT', 'DRUT', 'SECNT', 'WFNT', 'QOS', 'CRPNT', 'OPTNT', 'IPNT', 'FNTW'],
     ['ONEC', 'INFO-ONEC', 'INFO-ONECMID', 'SRK', 'BALGO', 'VY', 'INF', 'SID', 'REGIS', 'FILE', 'RNFD', 'IND', 'MA',
      'PV', 'BPZ', 'DTK', 'BSP', 'OCEDT', 'TAT', 'MROC', 'OCPS', 'FONEC', 'FONECMID'],
-    ['PAE', 'PBAS', 'PWIN', 'PNET', 'SCADA', 'PHD', 'CODEPLC', 'PIB', 'PMS', 'FPAE'],
+    ['PAE', 'PBAS', 'PWIN', 'PNET', 'SCADA', 'PHD', 'CODEPLC', 'PIB', 'PMS', 'FPAE', 'INFO-PAE'],
     ['QAMID', 'FAQA', 'JSQA', 'JSAQA', 'MQA', 'LOADQA', 'IBQA'],
     ['SIB', 'INFOSIB', 'IBB', 'IBNET', 'IBGIT', 'IBOS', 'IBDEV', 'IBWEB', 'IBDEF', 'IBMOD', 'IBINC', 'FIB'],
-    ['SQLD', 'SQLQA', 'SQLSLIN', 'SQLBASH', 'DWH-SQLD', 'SQLSDB', 'SQLDB'],
+    ['SQLD', 'SQLQA', 'SQLSLIN', 'SQLBASH', 'DWH-SQLD', 'SQLSDB', 'SQLDB', 'INFO-SIB'],
     ['SYS', 'SRLB', 'SDB', 'SLINA', 'SLINB', 'SLINC', 'NET', 'BASH', 'SVIRT', 'CICD', 'SMON', 'SFLT', 'SYSDB', 'SDBSQL',
-     'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS']
+     'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS', 'INFO-FOPS', 'INFO-SYS']
 ]
 
 

@@ -1,5 +1,8 @@
 import os
 import datetime
+
+import pandas as pd
+
 from db.moduls import reade_db_file
 
 
@@ -35,7 +38,7 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
         return 3, f"{modul}    {session}    {session_link}    {student}"
 
 
-def write_expert_file(experts_dict: dict, rez_file_expert, soft_expert):
+def write_expert_dip_file(experts_dict: dict, rez_file_expert, soft_expert):
     """
     Write data from the "experts_dict" dictionary into the file
     """
@@ -80,7 +83,7 @@ def sorted_dict(unsorted_dictionary: dict):
     return dict(sorted_tuple)
 
 
-def create_dict(sheet, files):
+def create_dip_dict(sheet, files):
     """
     Creating Dictionaries
     experts_dict - unverified tasks with assigned experts
@@ -129,6 +132,19 @@ def create_dict(sheet, files):
         print(i)
 
     return sorted_dict(experts_dict)
+
+def create_file_xls(file):
+    today = datetime.datetime.today().date()
+    df = pd.read_excel(file)
+    df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',
+                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Дедлайн', 'Отправлена', 'Проверющий',
+                 'Возможные проверяющие', 'Дней на проверке']]
+
+    df_rez_sorted = df_rez.sort_values('Отправлена')
+
+    result_file = f"result_file/Непроверенные дипломы {today}.xlsx"
+    df_rez_sorted.to_excel(result_file, index=False)
+    return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
 
 # if __name__ == '__main__':
 #     create_dict()
