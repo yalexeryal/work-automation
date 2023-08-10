@@ -1,5 +1,6 @@
 training_blocks = [
     ['JAVA', 'JM'],
+    ['IQA', 'QAPTL'],
     ['BTRX', 'INFO-BTRX', 'BWEB', 'BPATTI', 'BPATTC', 'BCONT', 'BBAY', 'FBTRX'],
     ['CPP', 'INFO-CPP', 'CPPS', 'CPPM', 'ALGOCPP', 'CPPL', 'SQLCPP', 'MAP', 'DPCPP', 'QT', 'IOT', 'PUE', 'FCPP'],
     ['DEVOPS', 'INFO-DEVOPS', 'MNT', 'DEVKUB', 'CLOKUB', 'GIT-DEV', 'VIRTD', 'TER', 'KONF', 'CICD-DEV', 'MON-DEV',

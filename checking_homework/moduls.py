@@ -213,5 +213,5 @@ def create_dict(sheet, do_not_check):
                     profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
                     profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
-    print(f"День недели: - {day_name}\n Просроченно: до - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
+    print(f"День недели: - {day_name}\n Просроченно: по - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
     return sorted_dict(experts_dict), sorted_dict(profession_dict)

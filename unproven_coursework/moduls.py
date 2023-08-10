@@ -133,7 +133,7 @@ def create_dip_dict(sheet, files):
 
     return sorted_dict(experts_dict)
 
-def create_file_xls(file):
+def create_file_dip_xls(file):
     today = datetime.datetime.today().date()
     df = pd.read_excel(file)
     df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',

@@ -4,7 +4,7 @@ from reade_file.moduls import reade_file_xlsx, create_file_xls, reade_file_csv, 
 from synopses.main import create_synopses_dict, write_synopses_file
 from db.moduls import reade_db_file, update_experts
 from training_check.moduls import create_dict_training, create_file_treanind
-from unproven_coursework.moduls import create_dip_dict, create_file_xls, write_expert_dip_file
+from unproven_coursework.moduls import create_dip_dict, create_file_dip_xls, write_expert_dip_file
 import datetime
 
 folder_path = os.path.dirname("work_file/")
@@ -48,7 +48,7 @@ def unproven_coursework(file):
     expert_dict = create_dip_dict(sheet, diploma_blocks)
     write_expert_dip_file(expert_dict, result_file, trusted_expert_coursework)
     print(write_expert_dip_file(expert_dict, result_file, trusted_expert_coursework))
-    print(create_file_xls(file))
+    print(create_file_dip_xls(file))
 
 
 def apps_run():
