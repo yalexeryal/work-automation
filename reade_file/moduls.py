@@ -30,7 +30,7 @@ def create_file_xls(file):
 
 def reade_file_csv(file: csv):
     with open(file, encoding="utf-8") as f:
-        reader = csv.reader(f, delimiter="\t")
+        reader = csv.reader(f)
         synopsis_list = list(reader)
         return synopsis_list
 
