@@ -25,12 +25,10 @@ def date_in_date(synopsis: str) -> str:
     """
     Convert the date from the line July 13, 2023 18:00 (MSC) to the line 13.07 18.00
     """
-    date_string = synopsis[0].split(',')[0].split('(')
-    date_string = date_string[0]
+    date_string = synopsis[:-5]
     date_object = dateparser.parse(date_string)
     formatted_date = date_object.strftime("%d.%m %H.%M")
     return formatted_date
-
 
 def create_synopses_dict(synopses: list) -> dict:
     """
