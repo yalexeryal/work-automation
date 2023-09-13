@@ -1,5 +1,7 @@
 import datetime
 import os
+from pprint import pprint
+
 import dateparser
 from db.moduls import training_blocks
 from reade_file.moduls import reade_file_csv

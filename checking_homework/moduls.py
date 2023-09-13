@@ -42,6 +42,9 @@ def checker_inspector(checker, inspectors) -> str:
         return str(inspectors[0])
 
 
+def check_inspector() -> str:
+    pass
+
 def message_template(day_name):
     if day_name == 'Friday':
         new_list_expert = ['Привет!',
@@ -147,7 +150,7 @@ def write_profession_file(profession_dict: dict, rez_file_profession):
                 for hw in prof_d[1][3]:
                     rez = f"{hw}\n"
                     f.write(rez)
-            rez = str(prof_d[1][4])
+            rez = '@' + " @".join(sorted(list(prof_d[1][4])))
             f.write(rez)
     return f"Создан файл {os.path.basename(rez_file_profession)}. " \
            f"В папке по адресу: {os.path.abspath(rez_file_profession)}"

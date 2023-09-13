@@ -1,4 +1,6 @@
 import os
+from pprint import pprint
+
 from checking_homework.moduls import write_expert_file, write_profession_file, create_dict
 from reade_file.moduls import reade_file_xlsx, create_file_xls, reade_file_csv, delete_startup_file
 from synopses.main import create_synopses_dict, write_synopses_file
@@ -60,7 +62,7 @@ def apps_run():
         '\nСделать рассылку непроверенных дз -1;'
         '\nСделать рассылку непроверенных дипломов -2;'
         '\nПроверить анонсы расписаний - 3; '
-        '\nПроверить активность тренеров -3;'
+        '\nПроверить активность тренеров -4;'
         '\nХотите проверить список доверенных экспертов -4;'
         '\nХотите провести корректировку списка доверенных экспертов - 5'
         '\nХотите проверить список экспертов которые не проверяют ДЗ -6'
@@ -80,13 +82,13 @@ def apps_run():
     elif request_assignment == 4:
         app_training_check(file)
 
-    elif request_assignment == 4:
-        print(reade_db_file('db/soft_experts.db'))
     elif request_assignment == 5:
-        print(update_experts('db/soft_experts.db'))
+        print(reade_db_file('db/soft_experts.db'))
     elif request_assignment == 6:
-        print(reade_db_file('db/do_not_check.db'))
+        print(update_experts('db/soft_experts.db'))
     elif request_assignment == 7:
+        print(reade_db_file('db/do_not_check.db'))
+    elif request_assignment == 8:
         print(update_experts('db/do_not_check.db'))
 
     del_request = input('Удалить файл из папки work_file Д/Н: ').lower()
