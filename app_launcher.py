@@ -38,7 +38,6 @@ def app_training_check(file):
     sheet = reade_file_xlsx(file)
     training_dict = create_dict_training(sheet)
     print(create_file_treanind(training_dict, rez_file_training))
-    print(create_file_xls(file))
 
 
 def unproven_coursework(file):

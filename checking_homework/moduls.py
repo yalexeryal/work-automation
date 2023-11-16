@@ -6,33 +6,40 @@ file_soft_expert = 'db/soft_experts.db'
 soft_expert = reade_db_file(file_soft_expert)
 
 
-def get_weekday_days_inspections():
+def get_weekday_days_inspections() -> tuple:
     """
     Get the names of the day of the week and the dates of overdue homework, check today and tomorrow.
     """
     day_name = datetime.date.today().strftime("%A")
     today = datetime.date.today()
 
-    if day_name == 'Monday' or day_name == 'Tuesday':
-        overdue = today - datetime.timedelta(days=6)
-        tomorrow_start = today - datetime.timedelta(days=4)
-        tomorrow_finish = today - datetime.timedelta(days=4)
+    answer = input('Вы хотите сами установить даты проверки? Если да то нажмите -1')
+    if answer == '1':
+        overdue = datetime.datetime.strptime(input('Ведите дату просрочки в формате 1999-12-24: '), "%Y-%m-%d" ).date()
+        tomorrow_start = datetime.datetime.strptime(input('Ведите дату первого дня проверки на завтра в формате 1999-12-24: '), "%Y-%m-%d" ).date()
+        tomorrow_finish = datetime.datetime.strptime(input('Ведите дату второго дня проверки на завтра в формате 1999-12-24: '), "%Y-%m-%d" ).date()
         return day_name, overdue, tomorrow_start, tomorrow_finish
 
-    elif day_name == 'Wednesday':
-        overdue = today - datetime.timedelta(days=6)
-        tomorrow_start = today - datetime.timedelta(days=2)
-        tomorrow_finish = today - datetime.timedelta(days=2)
-        return day_name, overdue, tomorrow_start, tomorrow_finish
+    else:
+        if day_name == 'Monday' or day_name == 'Tuesday':
+            overdue = today - datetime.timedelta(days=6)
+            tomorrow_start = today - datetime.timedelta(days=4)
+            tomorrow_finish = today - datetime.timedelta(days=4)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
 
-    elif day_name == 'Thursday' or day_name == 'Friday':
-        overdue = today - datetime.timedelta(days=4)
-        tomorrow_start = today - datetime.timedelta(days=2)
-        tomorrow_finish = today - datetime.timedelta(days=2)
-        return day_name, overdue, tomorrow_start, tomorrow_finish
+        elif day_name == 'Wednesday':
+            overdue = today - datetime.timedelta(days=6)
+            tomorrow_start = today - datetime.timedelta(days=2)
+            tomorrow_finish = today - datetime.timedelta(days=2)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
 
+        elif day_name == 'Thursday' or day_name == 'Friday':
+            overdue = today - datetime.timedelta(days=4)
+            tomorrow_start = today - datetime.timedelta(days=2)
+            tomorrow_finish = today - datetime.timedelta(days=2)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
 
-def checker_inspector(checker, inspectors) -> str:
+def checker_inspector(checker: list | str, inspectors: list) -> str:
     """
     Bringing out the checker.
     """
@@ -42,10 +49,15 @@ def checker_inspector(checker, inspectors) -> str:
         return str(inspectors[0])
 
 
-def check_inspector() -> str:
-    pass
+def check_inspector(profession_experts: set, soft_expert: set, overdue, submitted) -> bool:
+    new_profession_experts = profession_experts.issubset(soft_expert)
+    if submitted <= overdue or new_profession_experts == False:
+        return True
+    else:
+        return False
 
-def message_template(day_name):
+
+def message_template(day_name: str) -> tuple:
     if day_name == 'Friday':
         new_list_expert = ['Привет!',
                            ['Есть просроченные ДЗ необходимо проверить в ближайшее время:\n'],
@@ -76,7 +88,7 @@ def message_template(day_name):
         return new_list_expert, new_list_profession
 
 
-def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime, row: tuple):
+def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime, row: tuple) -> tuple:
     """
     Enter dates and a row from the works list, give the list index to add and a row to output.
 
@@ -98,7 +110,7 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
         return 3, f"{modul}    {session}    {session_link}    {student}"
 
 
-def write_expert_file(experts_dict: dict, rez_file_expert):
+def write_expert_file(experts_dict: dict, rez_file_expert) -> str:
     """
     Write data from the "experts_dict" dictionary into the file
     """
@@ -130,7 +142,7 @@ def write_expert_file(experts_dict: dict, rez_file_expert):
            f"В папке по адресу: {os.path.abspath(rez_file_expert)}"
 
 
-def write_profession_file(profession_dict: dict, rez_file_profession):
+def write_profession_file(profession_dict: dict, rez_file_profession) -> str:
     """
     Write data from the "profession_dict" dictionary into the file
     """
@@ -164,12 +176,12 @@ def modul_create(moduls):
     return modul
 
 
-def sorted_dict(unsorted_dictionary: dict):
+def sorted_dict(unsorted_dictionary: dict) -> dict:
     sorted_tuple = sorted(unsorted_dictionary.items(), key=lambda x: x[0])
     return dict(sorted_tuple)
 
 
-def create_dict(sheet, do_not_check):
+def create_dict(sheet, do_not_check) -> tuple:
     """
     Creating Dictionaries
     experts_dict - unverified tasks with assigned experts
@@ -208,13 +220,16 @@ def create_dict(sheet, do_not_check):
 
             else:
                 modul = modul_create(moduls)
-                if modul not in profession_dict:
-                    profession_dict[modul] = new_list_profession.copy()
-                    profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
-                    profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
-                else:
-                    profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
-                    profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
+                flag = check_inspector(profession_experts, soft_expert, overdue, submitted)
+                if flag:
+                    if modul not in profession_dict:
+                        profession_dict[modul] = new_list_profession.copy()
+                        profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
+                        profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
+                    else:
+                        profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
+                        profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
-    print(f"День недели: - {day_name}\n Просроченно: по - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
+    print(
+        f"День недели: - {day_name}\n Просрочено: по - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
     return sorted_dict(experts_dict), sorted_dict(profession_dict)

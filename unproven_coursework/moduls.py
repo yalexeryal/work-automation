@@ -4,7 +4,8 @@ import datetime
 import pandas as pd
 
 from db.moduls import reade_db_file
-
+from openpyxl import Workbook
+from openpyxl.styles import PatternFill, Font
 
 def checker_inspector(checker, inspectors) -> str:
     """
@@ -144,6 +145,21 @@ def create_file_dip_xls(file):
 
     result_file = f"result_file/Непроверенные дипломы {today}.xlsx"
     df_rez_sorted.to_excel(result_file, index=False)
+    workbook = Workbook()
+    sheet = workbook.active
+    header_fill = PatternFill(start_color="000000", end_color="000000", fill_type="solid")
+    header_font = Font(color="FFFFFF")
+
+    for col_num, column_title in enumerate(df_rez_sorted.columns, 1):
+        cell = sheet.cell(row=1, column=col_num, value=column_title)
+        cell.fill = header_fill
+        cell.font = header_font
+
+    for row_num, row_data in enumerate(df_rez_sorted.values, 2):
+        for col_num, cell_value in enumerate(row_data, 1):
+            sheet.cell(row=row_num, column=col_num, value=cell_value)
+
+    workbook.save(result_file)
     return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
 
 # if __name__ == '__main__':
