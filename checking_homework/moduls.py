@@ -194,41 +194,42 @@ def create_dict(sheet, do_not_check) -> tuple:
     new_list_expert, new_list_profession = message_template(day_name)
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
-        if submitted <= tomorrow_finish:
-            moduls = row[1].upper()
-            checker = row[10]
-            inspectors = set(str(row[11]).split(', '))
-            inspectors.difference_update(do_not_check)
-            inspectors = list(inspectors)
-            checker = checker_inspector(checker, inspectors)
-            profession_experts = set(inspectors)
-            outcome = date_filter(overdue, tomorrow_start, submitted, row)
-            ind, rez = outcome[0], outcome[1]
-
-            if checker is not None or len(inspectors) == 1:
+        if row[0] == 'Программирование':
+            submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
+            if submitted <= tomorrow_finish:
+                moduls = row[1].upper()
+                checker = row[10]
+                inspectors = set(str(row[11]).split(', '))
+                inspectors.difference_update(do_not_check)
+                inspectors = list(inspectors)
                 checker = checker_inspector(checker, inspectors)
+                profession_experts = set(inspectors)
                 outcome = date_filter(overdue, tomorrow_start, submitted, row)
                 ind, rez = outcome[0], outcome[1]
 
-                if checker not in experts_dict:
-                    experts_dict[checker] = new_list_expert.copy()
-                    experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
+                if checker is not None or len(inspectors) == 1:
+                    checker = checker_inspector(checker, inspectors)
+                    outcome = date_filter(overdue, tomorrow_start, submitted, row)
+                    ind, rez = outcome[0], outcome[1]
+
+                    if checker not in experts_dict:
+                        experts_dict[checker] = new_list_expert.copy()
+                        experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
+
+                    else:
+                        experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
 
                 else:
-                    experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
-
-            else:
-                modul = modul_create(moduls)
-                flag = check_inspector(profession_experts, soft_expert, overdue, submitted)
-                if flag:
-                    if modul not in profession_dict:
-                        profession_dict[modul] = new_list_profession.copy()
-                        profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
-                        profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
-                    else:
-                        profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
-                        profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
+                    modul = modul_create(moduls)
+                    flag = check_inspector(profession_experts, soft_expert, overdue, submitted)
+                    if flag:
+                        if modul not in profession_dict:
+                            profession_dict[modul] = new_list_profession.copy()
+                            profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
+                            profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
+                        else:
+                            profession_dict[modul][ind] = profession_dict[modul][ind] + [rez]
+                            profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
     print(
         f"День недели: - {day_name}\n Просрочено: по - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")

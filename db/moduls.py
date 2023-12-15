@@ -21,7 +21,9 @@ training_blocks = [
      'IBSZI', 'IBNETK', 'FSHIB'],
     ['SQLD', 'SQLQA', 'SQLSLIN', 'SQLBASH', 'DWH-SQLD', 'SQLSDB', 'SQLDB', 'SQLAR', 'INFO-SIB'],
     ['SYS', 'SRLB', 'SDB', 'SLINA', 'SLINB', 'SLINC', 'NET', 'BASH', 'SVIRT', 'CICD', 'SMON', 'SFLT', 'SYSDB', 'SDBSQL',
-     'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS', 'INFO-FOPS', 'INFO-SYS']
+     'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS', 'INFO-FOPS', 'INFO-SYS'],
+    ['ANALITIKA', 'ABT', 'APID', 'ATR', 'BIC', 'CVML', 'DSNN', 'DST', 'FEML', 'HRP', 'HRPAL', 'MLOP', 'PBI', 'PDX',
+     'RNFDA', 'RNFDAP', 'RSML', 'TSML', 'XLS', 'DSQ', 'MCA', 'YZDA']
 ]
 
 

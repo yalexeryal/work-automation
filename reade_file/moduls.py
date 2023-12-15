@@ -16,21 +16,6 @@ def reade_file_xlsx(file, num=0):
     return sheet
 
 
-# def create_file_xls(file):
-#     today = datetime.datetime.today().date()
-#     df = pd.read_excel(file)
-#     df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',
-#                  'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Дедлайн', 'Отправлена', 'Проверющий',
-#                  'Возможные проверяющие', 'Дней на проверке']]
-#
-#
-#     df_rez_sorted = df_rez.sort_values('Отправлена')
-#
-#     result_file = f"result_file/Непроверенные ДЗ {today}.xlsx"
-#     df_rez_sorted.to_excel(result_file, index=False)
-#     return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
-
-
 def create_file_xls(file):
     today = datetime.datetime.today().date()
     df = pd.read_excel(file)
@@ -59,9 +44,10 @@ def create_file_xls(file):
     workbook.save(result_file)
     return f"Создан файл {os.path.basename(result_file)}. В папке по адресу: {os.path.abspath(result_file)}"
 
+
 def reade_file_csv(file: csv):
     with open(file, encoding="utf-8") as f:
-        reader = csv.reader(f)
+        reader = csv.reader(f, delimiter=';')
         synopsis_list = list(reader)
         return synopsis_list
 
