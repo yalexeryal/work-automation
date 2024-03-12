@@ -103,31 +103,33 @@ def create_dip_dict(sheet, files):
                        ['\nНа всякий случай - до завтра до конца дня необходимо проверить курсовые:\n'],
                        ]
 
+
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
-        moduls = row[1].upper()
-        checker = row[10]
-        outcome = date_filter(overdue, tomorrow_start, submitted, row)
-        ind, rez = outcome[0], outcome[1]
-        session = row[5]
-        session_link = row[12]
-        student = row[8]
+        if row[0] == 'Программирование':
+            submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
+            moduls = row[1].upper()
+            checker = row[10]
+            outcome = date_filter(overdue, tomorrow_start, submitted, row)
+            ind, rez = outcome[0], outcome[1]
+            session = row[5]
+            session_link = row[12]
+            student = row[8]
 
-        if moduls in diploma_blocks:
-            continue
-        else:
-            if checker is None:
-                checker_none.append(f"{row[2]}  {session}  {session_link}  {student}  {submitted}")
-            elif submitted <= tomorrow_finish:
-                outcome = date_filter(overdue, tomorrow_start, submitted, row)
-                ind, rez = outcome[0], outcome[1]
+            if moduls in diploma_blocks:
+                continue
+            else:
+                if checker is None:
+                    checker_none.append(f"{row[2]}  {session}  {session_link}  {student}  {submitted}")
+                elif submitted <= tomorrow_finish:
+                    outcome = date_filter(overdue, tomorrow_start, submitted, row)
+                    ind, rez = outcome[0], outcome[1]
 
-                if checker not in experts_dict:
-                    experts_dict[checker] = new_list_expert.copy()
-                    experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
+                    if checker not in experts_dict:
+                        experts_dict[checker] = new_list_expert.copy()
+                        experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
 
-                else:
-                    experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
+                    else:
+                        experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
 
     for i in checker_none:
         print(i)

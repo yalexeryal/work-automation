@@ -2,6 +2,7 @@ import os
 from pprint import pprint
 
 from checking_homework.moduls import write_expert_file, write_profession_file, create_dict
+from creating_channels.main import create_channels_dict, write_channels_file
 from reade_file.moduls import reade_file_xlsx, create_file_xls, reade_file_csv, delete_startup_file
 from synopses.main import create_synopses_dict, write_synopses_file
 from db.moduls import reade_db_file, update_experts
@@ -52,6 +53,15 @@ def unproven_coursework(file):
     print(create_file_dip_xls(file))
 
 
+def app_channels_created(file):
+    # dirs = os.path.dirname("../work_file/")
+    # file = f"{dirs}/{os.listdir(path=dirs)[0]}"
+    name_file = 'result_file/channels.xlsx'
+    channels = reade_file_xlsx(file)
+    channels_dict = create_channels_dict(channels)
+    print(write_channels_file(channels_dict, name_file))
+
+
 def apps_run():
     folder_path = os.path.dirname("work_file/")
     file = f"{folder_path}/{os.listdir(path=folder_path)[0]}"
@@ -62,11 +72,11 @@ def apps_run():
         '\nСделать рассылку непроверенных дипломов -2;'
         '\nПроверить анонсы расписаний - 3; '
         '\nПроверить активность тренеров -4;'
-        '\nХотите проверить список доверенных экспертов -4;'
-        '\nХотите провести корректировку списка доверенных экспертов - 5'
-        '\nХотите проверить список экспертов которые не проверяют ДЗ -6'
-        '\nХотите провести корректировку списка экспертов не проверяющих ДЗ - 7'
-        '\nСделать рассылку непроверенных дипломов -8;'
+        '\nПроверить список каналов для создания -5'
+        '\nХотите проверить список доверенных экспертов -0;'
+        '\nХотите провести корректировку списка доверенных экспертов - 0'
+        '\nХотите проверить список экспертов которые не проверяют ДЗ -0'
+        '\nХотите провести корректировку списка экспертов не проверяющих ДЗ - 0'
         '\nУкажите выбранный вариант: '))
 
     if request_assignment == 1:
@@ -82,13 +92,16 @@ def apps_run():
         app_training_check(file)
 
     elif request_assignment == 5:
-        print(reade_db_file('db/soft_experts.db'))
-    elif request_assignment == 6:
-        print(update_experts('db/soft_experts.db'))
-    elif request_assignment == 7:
-        print(reade_db_file('db/do_not_check.db'))
-    elif request_assignment == 8:
-        print(update_experts('db/do_not_check.db'))
+        app_channels_created(file)
+
+    # elif request_assignment == 5:
+    #     print(reade_db_file('db/soft_experts.db'))
+    # elif request_assignment == 6:
+    #     print(update_experts('db/soft_experts.db'))
+    # elif request_assignment == 7:
+    #     print(reade_db_file('db/do_not_check.db'))
+    # elif request_assignment == 8:
+    #     print(update_experts('db/do_not_check.db'))
 
     del_request = input('Удалить файл из папки work_file Д/Н: ').lower()
     if del_request == 'д':
