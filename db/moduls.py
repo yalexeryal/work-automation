@@ -23,10 +23,13 @@ training_blocks = [
     ['SYS', 'SRLB', 'SDB', 'SLINA', 'SLINB', 'SLINC', 'NET', 'BASH', 'SVIRT', 'CICD', 'SMON', 'SFLT', 'SYSDB', 'SDBSQL',
      'SYSSEC', 'SLINA-LINUX', 'NET-LINUX', 'COURSE-FOPS', 'GIT-FOPS', 'FSYS', 'INFO-FOPS', 'INFO-SYS'],
     ['ANALITIKA', 'ABT', 'APID', 'ATR', 'BIC', 'CVML', 'DSNN', 'DST', 'FEML', 'HRP', 'HRPAL', 'MLOP', 'PBI', 'PDX',
-     'RNFDA', 'RNFDAP', 'RSML', 'TSML', 'XLS', 'DSQ', 'MCA', 'YZDA'],
+     'RNFDA', 'RNFDAP', 'RSML', 'TSML', 'XLS', 'DSQ', 'MCA', 'YZDA', 'DIPLOM-DSU', 'DLL', 'PDC', 'PGS', 'BANZ', 'ATRA',
+     'DSW', 'HRONB', 'INFO-OCA', 'INFO-HRM', 'MAA', 'MBPA', 'NUMPY', 'PWH', 'PYDA', 'SSOCA', 'STPY', 'TL', 'WSDL', 'MBP',
+     'DIPLOM-DJO', 'DSML', 'GPT-3', 'MDS', 'SQL', 'SQLP'],
     ['C-PY-AD', 'ADPY'],
     ['C-AJS', 'AJS', 'SHFEJS'],
-    ['C-DJ', 'DJSPD', 'DJ']
+    ['C-DJ', 'DJSPD', 'DJ'],
+    ['C-MQ', 'FDMQ', 'MQ']
 ]
 
 

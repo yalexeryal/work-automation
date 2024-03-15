@@ -40,7 +40,8 @@ def create_synopses_dict(synopses: list) -> dict:
     synopses_dict = {}
     for synopsis in synopses:
         flag_syn = "Утверждён" in synopsis[8]
-        if synopsis[2] == 'Программирование' and flag_syn:
+        # if synopsis[2] == 'Программирование' and flag_syn:
+        if  flag_syn:
             synopsis_date = date_in_date(synopsis[0])
             moduls = synopsis[1]
             moduls = moduls.upper()
