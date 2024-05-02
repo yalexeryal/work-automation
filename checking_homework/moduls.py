@@ -41,6 +41,26 @@ def get_weekday_days_inspections() -> tuple:
             tomorrow_finish = today - datetime.timedelta(days=2)
             return day_name, overdue, tomorrow_start, tomorrow_finish
 
+    # else:
+    #     if day_name == 'Monday':
+    #         overdue = today - datetime.timedelta(days=5)
+    #         tomorrow_start = today - datetime.timedelta(days=3)
+    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #         return day_name, overdue, tomorrow_start, tomorrow_finish
+    #
+    #     elif day_name == 'Tuesday':
+    #         overdue = today - datetime.timedelta(days=5)
+    #         tomorrow_start = today - datetime.timedelta(days=1)
+    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #         return day_name, overdue, tomorrow_start, tomorrow_finish
+    #
+    #     elif day_name == 'Wednesday' or day_name == 'Friday' or day_name == 'Thursday':
+    #         overdue = today - datetime.timedelta(days=3)
+    #         tomorrow_start = today - datetime.timedelta(days=1)
+    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #         return day_name, overdue, tomorrow_start, tomorrow_finish
+
+
 
 def checker_inspector(checker: list | str, inspectors: list) -> str:
     """
