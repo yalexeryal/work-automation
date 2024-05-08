@@ -22,43 +22,43 @@ def get_weekday_days_inspections() -> tuple:
             input('Ведите дату второго дня проверки на завтра в формате 1999-12-24: '), "%Y-%m-%d").date()
         return day_name, overdue, tomorrow_start, tomorrow_finish
 
-    else:
-        if day_name == 'Monday' or day_name == 'Tuesday':
-            overdue = today - datetime.timedelta(days=6)
-            tomorrow_start = today - datetime.timedelta(days=4)
-            tomorrow_finish = today - datetime.timedelta(days=4)
-            return day_name, overdue, tomorrow_start, tomorrow_finish
-
-        elif day_name == 'Wednesday':
-            overdue = today - datetime.timedelta(days=6)
-            tomorrow_start = today - datetime.timedelta(days=2)
-            tomorrow_finish = today - datetime.timedelta(days=2)
-            return day_name, overdue, tomorrow_start, tomorrow_finish
-
-        elif day_name == 'Thursday' or day_name == 'Friday':
-            overdue = today - datetime.timedelta(days=4)
-            tomorrow_start = today - datetime.timedelta(days=2)
-            tomorrow_finish = today - datetime.timedelta(days=2)
-            return day_name, overdue, tomorrow_start, tomorrow_finish
-
     # else:
-    #     if day_name == 'Monday':
-    #         overdue = today - datetime.timedelta(days=5)
-    #         tomorrow_start = today - datetime.timedelta(days=3)
-    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #     if day_name == 'Monday' or day_name == 'Tuesday':
+    #         overdue = today - datetime.timedelta(days=6)
+    #         tomorrow_start = today - datetime.timedelta(days=4)
+    #         tomorrow_finish = today - datetime.timedelta(days=4)
     #         return day_name, overdue, tomorrow_start, tomorrow_finish
     #
-    #     elif day_name == 'Tuesday':
-    #         overdue = today - datetime.timedelta(days=5)
-    #         tomorrow_start = today - datetime.timedelta(days=1)
-    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #     elif day_name == 'Wednesday':
+    #         overdue = today - datetime.timedelta(days=6)
+    #         tomorrow_start = today - datetime.timedelta(days=2)
+    #         tomorrow_finish = today - datetime.timedelta(days=2)
     #         return day_name, overdue, tomorrow_start, tomorrow_finish
     #
-    #     elif day_name == 'Wednesday' or day_name == 'Friday' or day_name == 'Thursday':
-    #         overdue = today - datetime.timedelta(days=3)
-    #         tomorrow_start = today - datetime.timedelta(days=1)
-    #         tomorrow_finish = today - datetime.timedelta(days=1)
+    #     elif day_name == 'Thursday' or day_name == 'Friday':
+    #         overdue = today - datetime.timedelta(days=4)
+    #         tomorrow_start = today - datetime.timedelta(days=2)
+    #         tomorrow_finish = today - datetime.timedelta(days=2)
     #         return day_name, overdue, tomorrow_start, tomorrow_finish
+
+    else:
+        if day_name == 'Monday':
+            overdue = today - datetime.timedelta(days=5)
+            tomorrow_start = today - datetime.timedelta(days=3)
+            tomorrow_finish = today - datetime.timedelta(days=1)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
+
+        elif day_name == 'Tuesday':
+            overdue = today - datetime.timedelta(days=5)
+            tomorrow_start = today - datetime.timedelta(days=1)
+            tomorrow_finish = today - datetime.timedelta(days=1)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
+
+        elif day_name == 'Wednesday' or day_name == 'Friday' or day_name == 'Thursday':
+            overdue = today - datetime.timedelta(days=3)
+            tomorrow_start = today - datetime.timedelta(days=1)
+            tomorrow_finish = today - datetime.timedelta(days=1)
+            return day_name, overdue, tomorrow_start, tomorrow_finish
 
 
 

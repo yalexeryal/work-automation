@@ -27,7 +27,7 @@ training_blocks = [
      'DSW', 'HRONB', 'INFO-OCA', 'INFO-HRM', 'MAA', 'MBPA', 'NUMPY', 'PWH', 'PYDA', 'SSOCA', 'STPY', 'TL', 'WSDL', 'MBP',
      'DIPLOM-DJO', 'DSML', 'GPT-3', 'MDS', 'SQL', 'SQLP', 'ABP', 'ACV', 'DFD', 'IMBA', 'INFO-ABU', 'INFO-OCAMID', 'NLP',
      'PAF', 'SALFREE', 'TAB', 'UPK', 'FPS', 'GPT', 'INFO-ABI', 'INFO-DS', 'PYDA-DIPLOM', 'DAU', 'DVA', 'INFO-DMAR',
-     'INFO-DSU', 'SDM', 'SDIT', 'ARCH-SAL', 'ROMAM'],
+     'INFO-DSU', 'SDM', 'SDIT', 'ARCH-SAL', 'ROMAM', 'DIPLOM-DS'],
     ['C-PY-AD', 'ADPY'],
     ['C-AJS', 'AJS', 'SHFEJS'],
     ['C-DJ', 'DJSPD', 'DJ'],
