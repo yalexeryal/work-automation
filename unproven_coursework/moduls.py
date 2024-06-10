@@ -71,14 +71,6 @@ def write_expert_dip_file(experts_dict: dict, rez_file_expert, soft_expert):
            f"В папке по адресу: {os.path.abspath(rez_file_expert)}"
 
 
-# def modul_create(moduls):
-#     modul = moduls
-#     for block in training_blocks:
-#         if moduls in block:
-#             modul = block[0]
-#     return modul
-
-
 def sorted_dict(unsorted_dictionary: dict):
     sorted_tuple = sorted(unsorted_dictionary.items(), key=lambda x: x[0])
     return dict(sorted_tuple)
@@ -142,9 +134,6 @@ def create_file_dip_xls(file):
     df_rez = df[['Модуль', 'Название задания', 'Ссылка на работу в админке',
                  'Ссылка на работу в ЛК эксперта', 'Студент', 'Отправлена', 'Проверющий',
                  'Возможные проверяющие']]
-    # df_rez = df[['БЮ', 'Продукт', 'Модуль', 'Название задания', 'ID задания', 'Ссылка на работу в админке',
-    #              'Ссылка на работу в ЛК эксперта', 'Студент', 'Дедлайн', 'Дедлайн', 'Отправлена', 'Проверющий',
-    #              'Возможные проверяющие', 'Дней на проверке']]
 
     df_rez_sorted = df_rez.sort_values('Модуль')
 
