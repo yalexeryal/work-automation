@@ -2,6 +2,7 @@ import os
 import datetime
 from db.moduls import training_blocks, reade_db_file
 
+
 file_soft_expert = 'db/soft_experts.db'
 soft_expert = reade_db_file(file_soft_expert)
 
@@ -22,25 +23,6 @@ def get_weekday_days_inspections() -> tuple:
             input('Ведите дату второго дня проверки на завтра в формате 1999-12-24: '), "%Y-%m-%d").date()
         return day_name, overdue, tomorrow_start, tomorrow_finish
 
-    # else:
-    #     if day_name == 'Monday' or day_name == 'Tuesday':
-    #         overdue = today - datetime.timedelta(days=6)
-    #         tomorrow_start = today - datetime.timedelta(days=4)
-    #         tomorrow_finish = today - datetime.timedelta(days=4)
-    #         return day_name, overdue, tomorrow_start, tomorrow_finish
-    #
-    #     elif day_name == 'Wednesday':
-    #         overdue = today - datetime.timedelta(days=6)
-    #         tomorrow_start = today - datetime.timedelta(days=2)
-    #         tomorrow_finish = today - datetime.timedelta(days=2)
-    #         return day_name, overdue, tomorrow_start, tomorrow_finish
-    #
-    #     elif day_name == 'Thursday' or day_name == 'Friday':
-    #         overdue = today - datetime.timedelta(days=4)
-    #         tomorrow_start = today - datetime.timedelta(days=2)
-    #         tomorrow_finish = today - datetime.timedelta(days=2)
-    #         return day_name, overdue, tomorrow_start, tomorrow_finish
-
     else:
         if day_name == 'Monday':
             overdue = today - datetime.timedelta(days=5)
@@ -59,7 +41,6 @@ def get_weekday_days_inspections() -> tuple:
             tomorrow_start = today - datetime.timedelta(days=1)
             tomorrow_finish = today - datetime.timedelta(days=1)
             return day_name, overdue, tomorrow_start, tomorrow_finish
-
 
 
 def checker_inspector(checker: list | str, inspectors: list) -> str:
@@ -254,5 +235,6 @@ def create_dict(sheet, do_not_check) -> tuple:
                         profession_dict[modul][4] = profession_dict[modul][4].union(profession_experts)
 
     print(
-        f"День недели: - {day_name}\n Просрочено: по - {overdue}\n Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
+        f"День недели: - {day_name}\n Просрочено: по - {overdue}\n "
+        f"Проверить до завтра: -{tomorrow_start} - {tomorrow_finish}")
     return sorted_dict(experts_dict), sorted_dict(profession_dict)
