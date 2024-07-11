@@ -99,10 +99,10 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
     """
     overdue_date = overdue
     tomorrow_start_date = tomorrow_start
-    modul = row[2]
-    session = row[3]
-    session_link = row[12]
-    student = row[8]
+    modul = row[4]
+    session = row[5]
+    session_link = row[14]
+    student = row[10]
 
     if submitted <= overdue_date:
         return 1, f"{modul}    {session}    {session_link}    {student}    {submitted}"
@@ -198,11 +198,11 @@ def create_dict(sheet, do_not_check) -> tuple:
     new_list_expert, new_list_profession = message_template(day_name)
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
+        submitted = datetime.datetime.strptime(row[11], "%Y-%m-%d").date()
         if submitted <= tomorrow_finish:
-            moduls = row[1].upper()
-            checker = row[10]
-            inspectors = set(str(row[11]).split(', '))
+            moduls = row[3].upper()
+            checker = row[12]
+            inspectors = set(str(row[13]).split(', '))
             inspectors.difference_update(do_not_check)
             inspectors = list(inspectors)
             checker = checker_inspector(checker, inspectors)

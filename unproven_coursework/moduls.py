@@ -24,10 +24,10 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
     """
     overdue_date = overdue
     tomorrow_start_date = tomorrow_start
-    modul = row[2]
-    session = row[3]
-    session_link = row[12]
-    student = row[8]
+    modul = row[4]
+    session = row[7]
+    session_link = row[14]
+    student = row[10]
 
     if submitted <= overdue_date:
         return 1, f"{modul}    {session}    {session_link}    {student}    {submitted}"
@@ -97,21 +97,20 @@ def create_dip_dict(sheet, files):
 
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        # if row[0] == 'Программирование':
-        submitted = datetime.datetime.strptime(row[9], "%Y-%m-%d").date()
-        moduls = row[1].upper()
-        checker = row[10]
+        submitted = datetime.datetime.strptime(row[11], "%Y-%m-%d").date()
+        moduls = row[4].upper()
+        checker = row[12]
         outcome = date_filter(overdue, tomorrow_start, submitted, row)
         ind, rez = outcome[0], outcome[1]
-        session = row[5]
-        session_link = row[12]
-        student = row[8]
+        session = row[7]
+        session_link = row[14]
+        student = row[10]
 
         if moduls in diploma_blocks:
             continue
         else:
             if checker is None:
-                checker_none.append(f"{row[2]}  {session}  {session_link}  {student}  {submitted}")
+                checker_none.append(f"{row[4]}  {session}  {session_link}  {student}  {submitted}")
             elif submitted <= tomorrow_finish:
                 outcome = date_filter(overdue, tomorrow_start, submitted, row)
                 ind, rez = outcome[0], outcome[1]
