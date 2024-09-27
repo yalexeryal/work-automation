@@ -20,7 +20,7 @@ def create_file_xls(file):
     today = datetime.datetime.today().date()
     df = pd.read_excel(file)
     df_rez = df[['Модуль', 'Название задания', 'Ссылка на работу в админке',
-                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Отправлена', 'Проверющий',
+                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Отправлена', 'Проверяющий',
                  'Возможные проверяющие']]
 
     df_rez_sorted = df_rez.sort_values('Модуль')
@@ -70,4 +70,3 @@ if __name__ == '__main__':
     file = f"{dirs}/{os.listdir(path=dirs)[0]}"
     sheet = reade_file_xlsx(file)
     create_file_xls(sheet, dir_name)
-

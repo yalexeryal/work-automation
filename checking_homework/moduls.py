@@ -2,7 +2,6 @@ import os
 import datetime
 from db.moduls import training_blocks, reade_db_file
 
-
 file_soft_expert = 'db/soft_experts.db'
 soft_expert = reade_db_file(file_soft_expert)
 

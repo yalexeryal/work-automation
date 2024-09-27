@@ -10,7 +10,7 @@ training_blocks = [
     ['C-PY', 'PY', 'PYAPI', 'SQLPY', 'PDPTL', 'PDPTS'],
     ['C-FPY-ФРОНТЕНД', 'FPY', 'FPYMQ', 'FPYJS', 'FPYAJS', 'FPYAHJ', 'FFPY'],
     ['IOS', 'info-ios', 'BIOS', 'IBALGO', 'AIOS', 'IOSUI', 'IOSINT', 'IOSDT', 'IOSADV', 'FIOS'],
-    ['NDJS', 'INFO-NDJS', 'NDSE', 'NDTNF', 'FNDJS' "NDJS-ASINHR"],
+    ['NDJS', 'INFO-NDJS', 'NDSE', 'NDTNF', 'FNDJS', 'NDJS-ASINHR'],
     ['NTW', 'INFO-NTW', 'BNTW', 'RUTSW', 'RSNT', 'DRUT', 'SECNT', 'WFNT', 'QOS', 'CRPNT', 'OPTNT', 'IPNT', 'FNTW'],
     ['ONEC-ONECMID', 'ONEC', 'INFO-ONEC', 'INFO-ONECMID', 'SRK', 'BALGO', 'VY', 'INF', 'SID', 'REGIS', 'FILE', 'RNFD', 'IND', 'MA',
      'PV', 'BPZ', 'DTK', 'BSP', 'OCEDT', 'TAT', 'MROC', 'OCPS', 'FONEC', 'FONECMID'],
@@ -29,11 +29,13 @@ training_blocks = [
      'PAF', 'SALFREE', 'TAB', 'UPK', 'FPS', 'GPT', 'INFO-ABI', 'INFO-DS', 'PYDA-DIPLOM', 'DAU', 'DVA', 'INFO-DMAR',
      'INFO-DSU', 'SDM', 'SDIT', 'ARCH-SAL', 'ROMAM', 'DIPLOM-DS', 'ABD', 'DIPLOM-DEG', 'DLH', 'DPRO', 'INFO-AML',
      'INFO-AWH', 'INFO-DA', 'INFO-DAU', 'INFO-DEG', 'INFO-HRDA', 'INFO-SAL', 'INFO-SUP', 'XLSB', 'ALS', 'TARIF-DS',
-     'BANZ-RESEARCH', 'BANZ-FINMODEL', 'BANZ-BPM', "INFO-PBI"],
+     'BANZ-RESEARCH', 'BANZ-FINMODEL', 'BANZ-BPM', "INFO-PBI", "ASQLP", "BANZ-REPORTING", "INFO-PDX", "ASQL", 'APDX',
+     'APBI', 'FPBI', 'BANZ-SS', 'FSQL', 'EXCELU', 'OKMID', 'BANZ-CASE', 'FPDX', "DIPLOM-AML"],
     ['C-PY-AD', 'ADPY'],
     ['C-AJS', 'AJS', 'SHFEJS'],
     ['C-DJ', 'DJSPD', 'DJ'],
-    ['C-MQ', 'FDMQ', 'MQ']
+    ['C-MQ', 'FDMQ', 'MQ'],
+    ['C-RA', 'RA', 'LRA-ASINHR', 'LRA']
 ]
 
 
