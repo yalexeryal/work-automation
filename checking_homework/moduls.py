@@ -219,7 +219,7 @@ def create_dict(sheet, do_not_check) -> tuple:
                     experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
 
                 else:
-                    experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
+                     experts_dict[checker][ind] = experts_dict[checker][ind] + [rez]
 
             else:
                 modul = modul_create(moduls)
