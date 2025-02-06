@@ -44,36 +44,6 @@ def date_in_date(synopsis: str) -> str:
     return formatted_date
 
 
-# def create_synopses_dict(synopses: list) -> dict:
-#     """
-#     Create a dictionary with announcements by module code from the list of announcements.
-#     """
-#     header = synopses.pop(0)
-#     synopses_dict = {}
-#     for synopsis in synopses:
-#         flag_syn = "Утверждён" in synopsis[8]
-#         # if synopsis[2] == 'Программирование' and flag_syn:
-#         if flag_syn:
-#             synopsis_date = date_in_date(synopsis[0])
-#             moduls = synopsis[1]
-#             moduls = moduls.upper()
-#             code_product = moduls.rsplit('-', maxsplit=1)[0].upper()
-#             code_product = modul_create(code_product).upper()
-#             task = synopsis[3]
-#             expert = synopsis[4]
-#             synopsis_str_shot = f"{synopsis_date}  {task}  @{expert} \n"
-#             if code_product not in synopses_dict:
-#                 synopses_dict[code_product] = {moduls.upper(): [synopsis_str_shot]}
-#             else:
-#                 if moduls not in synopses_dict[code_product]:
-#                     synopses_dict[code_product].update({moduls.upper(): [synopsis_str_shot]})
-#                 else:
-#                     synopses_dict[code_product][moduls].extend(synopsis_str_shot)  # Добавляем данные в список
-#         else:
-#             print(synopsis[8], synopsis[2], synopsis[0], synopsis[1])
-#
-#     return sorted_dict(synopses_dict)
-
 def create_synopses_dict(synopses: list) -> dict:
     """
     Create a dictionary with announcements by module code from the list of announcements.

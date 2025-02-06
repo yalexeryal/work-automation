@@ -40,7 +40,7 @@ def write_channels_file(channels_dict: dict, name_file: str):
     for channel in channels_dict.values():
         values = channel
         sheet.append(values)
-    workbook.save('channels_data.xlsx')
+    # workbook.save('channels_data.xlsx')
 
     workbook.save(name_file)
     return f"Создан файл {os.path.basename(name_file)}. В папке по адресу: {os.path.abspath(name_file)}"

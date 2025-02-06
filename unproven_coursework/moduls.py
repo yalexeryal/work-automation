@@ -1,5 +1,6 @@
 import os
 import datetime
+from os.path import split
 
 import pandas as pd
 
@@ -26,17 +27,17 @@ def date_filter(overdue: datetime, tomorrow_start: datetime, submitted: datetime
     tomorrow_start_date = tomorrow_start
     modul = row[4]
     session = row[7]
-    session_link = row[14]
+    session_link = row[15]
     student = row[10]
 
     if submitted <= overdue_date:
-        return 1, f"{modul}    {session}    {session_link}    {student}    {submitted}"
+        return 1, f"{modul}    {session}    {session_link} {submitted}"
 
     elif overdue_date < submitted < tomorrow_start_date:
-        return 2, f"{modul}    {session}    {session_link}    {student}"
+        return 2, f"{modul}    {session}    {session_link}"
 
     elif tomorrow_start_date <= submitted:
-        return 3, f"{modul}    {session}    {session_link}    {student}"
+        return 3, f"{modul}    {session}    {session_link}"
 
 
 def write_expert_dip_file(experts_dict: dict, rez_file_expert, soft_expert):
@@ -97,13 +98,14 @@ def create_dip_dict(sheet, files):
 
 
     for row in sheet.iter_rows(min_row=2, values_only=True):
-        submitted = datetime.datetime.strptime(row[11], "%Y-%m-%d").date()
+        submitted = datetime.datetime.strptime(row[12], "%Y-%m-%d").date()
         moduls = row[4].upper()
-        checker = row[12]
+        moduls = str(moduls.rsplit('-', 1)[0])
+        checker = row[13]
         outcome = date_filter(overdue, tomorrow_start, submitted, row)
         ind, rez = outcome[0], outcome[1]
         session = row[7]
-        session_link = row[14]
+        session_link = row[15]
         student = row[10]
 
         if moduls in diploma_blocks:
@@ -111,7 +113,7 @@ def create_dip_dict(sheet, files):
         else:
             if checker is None:
                 checker_none.append(f"{row[4]}  {session}  {session_link}  {student}  {submitted}")
-            elif submitted <= tomorrow_finish:
+            elif submitted < tomorrow_start:
                 outcome = date_filter(overdue, tomorrow_start, submitted, row)
                 ind, rez = outcome[0], outcome[1]
 
@@ -131,7 +133,7 @@ def create_file_dip_xls(file):
     today = datetime.datetime.today().date()
     df = pd.read_excel(file)
     df_rez = df[['Модуль', 'Название задания', 'Ссылка на работу в админке',
-                 'Ссылка на работу в ЛК эксперта', 'Студент', 'Отправлена', 'Проверяющий',
+                 'Ссылка на работу в ЛК эксперта', 'ID студента', 'Отправлена', 'Проверяющий',
                  'Возможные проверяющие']]
 
     df_rez_sorted = df_rez.sort_values('Модуль')
