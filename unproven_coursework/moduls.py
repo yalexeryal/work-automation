@@ -112,7 +112,7 @@ def create_dip_dict(sheet, files):
             continue
         else:
             if checker is None:
-                checker_none.append(f"{row[4]}  {session}  {session_link}  {student}  {submitted}")
+                checker_none.append(f"{row[4]}  {session}  {row[16]}  {student}  {submitted}")
             elif submitted < tomorrow_start:
                 outcome = date_filter(overdue, tomorrow_start, submitted, row)
                 ind, rez = outcome[0], outcome[1]
